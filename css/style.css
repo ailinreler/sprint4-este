@@ -1,0 +1,1036 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro|Anton');
+
+.errores{
+  background: white;
+  color: tomato;
+}
+
+.errores p{
+  padding: 25px;
+}
+
+html{
+  height: 100vh;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  min-width: 340px;
+}
+
+a{
+  text-decoration: none;
+}
+
+p{
+  line-height: 1.4em;
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* errores */
+
+.errores{
+  display: flex;
+}
+
+
+/***************************  INDEX    ***************************/
+
+/*  H1  */
+.marca{
+  text-align: center;
+  padding: 20px;
+}
+
+.marca h1{
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.marca h1 span{
+  font-style: italic;
+  color: tomato;
+}
+
+/*  H2s  */
+
+.productos-destacados h2, .elegirnos h2, .losmasvendidos h2, .nuestrosclientes h2{
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin:80px 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+/*  LOGIN  */
+
+.login{
+  background: rgb(13, 13, 13);
+  font-family: sans-serif;
+  margin: 0;
+  overflow: hidden;
+  line-height: 50px;
+}
+
+.login a{
+  color: rgb(240, 240, 240);
+  padding: 0 10px;
+  font-weight: 700;
+  float: right;
+}
+
+.login a:hover{
+  color: tomato;
+}
+
+/*  HAMBURGUESA   */
+
+.login .hamburguesa{
+  float: left;
+}
+
+.login .hamburguesa a{
+  font-size: 50px;
+  color: rgb(240, 240, 240);
+  padding: 0 10px;
+  display: inline-block;
+}
+
+.login .hamburguesa a:hover{
+  color: tomato;
+}
+
+/*  NAV  */
+
+nav{
+  font-family: sans-serif;
+  background: rgb(13, 13, 13);
+  display: none;
+}
+
+nav ul li{
+  text-align: center;
+}
+
+nav ul li a{
+  display: block;
+  text-transform: uppercase;
+  color:rgb(240, 240, 240);
+  padding: 15px;
+  font-size: 12px;
+}
+
+nav ul li a:hover{
+  background: tomato;
+  border-radius: 5px;
+}
+
+/*  HEADER SIN NAV  */
+
+header{
+  font-family: sans-serif;
+  color: white;
+  width: 100%;
+  background: url('../images/header-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.slider{
+  text-align: center;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  background: url(../images/header-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.slider h2{
+  font-size: 30px;
+  font-weight: 700;
+  padding: 25px 10px;
+  color: white;
+}
+
+.slider p{
+  color: rgb(130, 130, 130);
+  padding-bottom: 20px;
+}
+
+.slider .slider-contenedor{
+  margin: auto;
+}
+
+.slider div div{
+  width: 100%;
+}
+
+.slider img{
+  width: 100%;
+  max-width: 700px;
+}
+
+/*  PRODUCTOS DESTACADOS  */
+
+.productos-destacados{
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.productos-destacados div{
+  position: relative;
+  overflow: hidden;
+  margin:20px 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.productos-destacados div:hover div{
+  top: 0;
+  opacity: 1;
+}
+
+.productos-destacados div img{
+  width: 100%;
+  transition: all 0.4s ease;
+}
+
+.productos-destacados div:hover img{
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+.productos-destacados div div{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  opacity: 0;
+  left: 0;
+  text-align: center;
+  transition: all 0.4s ease;
+  margin:0;
+}
+
+.productos-destacados div div a{
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+  color: white;
+  font-size: 40px;
+}
+
+.productos-destacados div div a span{
+  background: tomato;
+  display: inline-block;
+  width: 80px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 20px;
+}
+
+/*  ELEGIRNOS  */
+
+.elegirnos{
+  font-family: sans-serif;
+  margin-bottom:80px;
+  text-align: center;
+}
+
+.elegirnos div{
+  margin:50px 0;
+}
+
+.elegirnos div div{
+  text-align: center;
+  margin:0;
+}
+
+.elegirnos div div span{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  color: white;
+}
+
+.elegirnos div div span.icono-1{
+  background: rgb(0, 141, 185);
+}
+
+.elegirnos div div span.icono-2{
+  background: rgb(142, 185, 0);
+}
+
+.elegirnos div div span.icono-3{
+  background: rgb(255, 169, 0);
+}
+
+.elegirnos div h3{
+  text-align: center;
+  margin: 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: rgb(28, 28, 28);
+}
+
+.elegirnos div p{
+  margin: 20px;
+}
+
+/*  LOS MAS VENDIDOS  */
+
+.losmasvendidos{
+  font-family: sans-serif;
+  background: url(../images/bg-p.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.losmasvendidos div.bg-oscuro{
+  background: rgba(0,0,0,0.8);
+  width: 100%;
+  height: 100%;
+}
+
+.losmasvendidos h2{
+  color: white;
+  padding-top: 50px;
+}
+
+.losmasvendidos div div div{
+  background: white;
+  margin:50px 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.losmasvendidos div div div:hover div{
+  left: 0;
+  opacity: 1;
+}
+
+.losmasvendidos div div div:hover img{
+  transform: scale(1.2);
+}
+
+.losmasvendidos div div div img{
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.losmasvendidos div div div div{
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.8);
+  margin:0;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.losmasvendidos div div div div a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.losmasvendidos div div div div a span{
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 30px;
+  background: tomato;
+  padding: 10px;
+  width: 80px;
+  border-radius: 20px;
+}
+
+/*  NUESTROS CLIENTES  */
+
+.nuestrosclientes{
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.nuestrosclientes .cliente{
+  margin: 30px 0;
+  background: rgb(26, 26, 26);
+  color: white;
+}
+
+.nuestrosclientes div:nth-child(even){
+  background: white;
+  color: rgb(26, 26, 26);
+}
+
+.nuestrosclientes div:last-child{
+  margin-bottom: 0;
+}
+
+.nuestrosclientes .cliente p{
+  padding: 20px;
+}
+
+.nuestrosclientes img{
+  width: 150px;
+  border-radius: 50%;
+  margin: 25px 0;
+}
+
+/*  FOOTER  */
+
+footer{
+  background: rgb(17, 17, 17);
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+footer div{
+  border-bottom: 1px solid grey;
+  padding: 20px 0;
+}
+
+footer h2{
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+footer div ul li a{
+  color: white;
+}
+
+footer div ul li a:hover{
+  color: tomato;
+}
+
+footer div ul li a span{
+  color: white;
+  display: inline-block;
+  margin: 10px 0;
+  transition: 0.3s all ease;
+}
+
+footer div ul li a span:hover{
+  color: tomato;
+  transform: scale(1.5);
+}
+
+/***************************  LOG IN    ***************************/
+
+.container-login{
+  min-height: 100%;
+  display: flex;
+  font-family: sans-serif;
+  align-items: center;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.login .container-loggedin{
+  padding: 10px 25px;
+  float: left;
+}
+
+.login .container-loggedin img{
+  width: 50px;
+  border-radius: 50%;
+}
+
+.login .container-loggedin h2{
+  display: inline;
+  color: white;
+  padding: 0 15px;
+}
+
+.loginbox {
+  width:100%;
+  background: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 40px;
+  margin: 0 auto;
+}
+
+.user{
+  margin: 0 auto;
+  text-align: center;
+  width: 250px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.loginbox input{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.loginbox input[type='checkbox']{
+  width: inherit;
+}
+
+
+.loginbox input[type="text"], .loginbox input[type="password"], .loginbox input[type="email"], .loginbox input[type="number"]
+{
+  border: none;
+  border-bottom:  2px solid #262626;
+  outline: none;
+  height: 40px;
+  color: #262626;
+  background: transparent;
+  font-size: 16px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.loginbox input[type="text"]:focus, .loginbox input[type="email"]:focus, .loginbox input[type="password"]:focus, .loginbox input[type="number"]:focus{
+  border-bottom: 2px solid #f00;
+}
+
+.inputbox{
+  position: relative;
+}
+
+.inputbox span{
+  position: absolute;
+  top: 10px;
+  color: #262626;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  height: 40px;
+  font-size: 16px;
+  background: #ed292a;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.submit:hover{
+  background: rgb(22, 22, 22);
+  color: white;
+}
+
+.loginbox a{
+  color: #262626;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+
+/****************************** PRODUCTOS *********************************/
+
+.page-title{
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 30px 0;
+  border:1px solid #e1e7ec;
+  background-color: #f5f5f5;
+}
+
+.page-title h2{
+  margin: 0;
+  font-size: 30px;
+  font-weight: normal;
+  text-align: center;
+  color: black;
+  font-family: Montserrat;
+  text-transform: uppercase;
+}
+
+.page-select{
+  margin-bottom: 30px;
+}
+
+.page-select label{
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.product-select {
+    padding:0;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    width: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #fff;
+    text-align: center;
+}
+
+.product-select select {
+    padding: 5px;
+    width: 90%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+.product-select select:focus {
+    outline: none;
+}
+
+.product-div{
+  display: block;
+  position: relative;
+  width: 90%;
+  padding: 20px 0;
+  border: 1px solid #e1e7ec;
+  border-radius: 7px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.descuento{
+  position: absolute;
+  left: 5px;
+  top: 0;
+  color: #ff5252;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.product-div img{
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.tachado{
+  color: grey;
+}
+
+.product-div p{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.product-div input, .buscar{
+  border: none;
+  outline: none;
+  height: 40px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: white;
+  background: tomato;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 50%;
+}
+
+
+/******************************* FAQ ************************************/
+
+.contenedor-todo-faq{
+  display: flex;
+  justify:center;
+  align-items: center;
+  height: 100%;
+}
+
+.page-title-faq{
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 30px 0;
+  border:1px solid #e1e7ec;
+  background-color: #f5f5f5;
+}
+
+.page-title-faq h2{
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+  color: black;
+  font-family: Montserrat;
+  text-transform: uppercase;
+}
+
+button.accordion {
+		background-color: white;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+		text-transform: uppercase;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color:#b6b6b6;
+		opacity: 0.6;
+}
+
+div.panel {
+		font-family: "Source Sans Pro";
+		padding-bottom: 1px;
+		padding-left: 10px;
+		background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+button.accordion:after {
+    content: '\02795'; /* Es el simbolo + */
+    font-size: 13px;
+    color: black;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796"; /* Es el simbolo - */
+}
+
+.preguntasfrecuentesForm{
+	margin-top: 10px;
+}
+
+/***************************** CONTACTO ******************************/
+
+form.preguntasfrecuentesForm{
+	margin-top: 20px;
+	margin-top: 10px;
+  padding: 0 20px;
+}
+
+.preguntasfrecuentesForm h2{
+  font-family: "montserrat", sans-serif;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.preguntasfrecuentesForm p{
+  font-family: "montserrat", sans-serif;
+  margin: 15px 0;
+}
+
+.preguntasfrecuentesHelp label {
+  font-family: "montserrat", sans-serif;
+
+}
+
+.subtitulo-faq{
+	width: 100%;
+	margin-bottom: 20px;
+	border: 2px solid #dadada;
+	border-radius: 4px;
+	margin-left: 8px 0;
+	outline: none;
+	padding: 8px;
+	box-sizing: border-box;
+}
+
+.submit-faq {
+	width: 50%;
+	text-align: center;
+  border: none;
+  outline: none;
+  height: 40px;
+  font-size: 16px;
+  background: #ed292a;
+  color: #fff;
+  border-radius: 20px;
+	margin-bottom: 20px;
+}
+
+.submit-faq:hover{
+  cursor: pointer;
+}
+
+
+/*----------------------REGISTRATION  COMPLETE------------------------------- */
+
+.registration-ok{
+  display: block;
+  position: relative;
+  width: 90%;
+  padding: 20px 0;
+  border: 1px solid #e1e7ec;
+  border-radius: 7px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.registration-ok img{
+  max-width: 200px;
+  height: auto;
+  vertical-align: middle;
+}
+
+.registration-ok p,h1{
+  margin: 15px 10px;
+}
+
+
+
+
+/* MEDIA QUERIES TABLET */
+
+@media screen and (min-width:768px){
+
+/*  INDEX  */
+
+.hamburguesa{
+  display: none;
+}
+
+header nav{
+  display: block;
+  background: background: rgb(13, 13, 13);;
+  text-align: center;
+}
+
+header nav ul li{
+  display: inline-block;
+}
+
+.productos-destacados{
+  overflow: hidden;
+}
+
+.productos-destacados div{
+  width: calc(50% - 30px);
+  float: left;
+  margin: 15px;
+  border: solid 1px rgb(230,230,230);
+}
+
+.elegirnos{
+  overflow: hidden;
+}
+
+.elegirnos .porque{
+  float: left;
+  width: calc(100%/3);
+}
+
+.losmasvendidos{
+  overflow: hidden;
+}
+
+.losmasvendidos div.bg-oscuro{
+  overflow: hidden;
+}
+
+.losmasvendidos div h2{
+  float: right;
+  padding: 15% 50px;
+  width: calc(50% - 20px);
+}
+
+.losmasvendidos div div{
+  width: calc(50% - 30px);
+  margin: 15px;
+  float: left;
+}
+
+footer ul li{
+  width: 50%;
+  float: left;
+}
+
+footer ul{
+  overflow: hidden;
+}
+
+footer ul.redes li{
+  width: calc(100%/3);
+  float: left;
+}
+
+/*  LOGIN  */
+
+.container-login{
+  background: url(../images/bg2-body-login.jpg);
+  background-size: cover;
+  font-family: sans-serif;
+}
+
+.loginbox{
+  max-width: 350px;
+  margin: 50px auto;
+}
+
+/* PRODUCTS */
+
+.container-products{
+  max-width: 100%;
+  padding-top: 0;
+}
+
+.page-title{
+  background: url(../images/bg2-body.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border: 0 solid #fff;
+}
+
+.page-title h2{
+  font-size: 70px;
+}
+
+.page-product{
+  height: 50%;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.product-div{
+  float: left;
+  width: 30%;
+  margin-left: 3%;
+  margin-bottom: 30px;
+}
+
+/* FAQ */
+
+.page-title-faq{
+	background: url(../images/bg2-body-faq.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	border: 0 solid #fff;
+}
+
+.page-title-faq h2{
+  font-size: 40px;
+}
+
+}
+
+
+@media screen and (min-width:1200px){
+
+  .productos-destacados div{
+    width: calc(25% - 30px);
+  }
+
+  .losmasvendidos div{
+    float: left;
+    width: 50%;
+    padding: 10px;
+  }
+
+  .losmasvendidos h2{
+    float: right;
+    width: calc(50% - 20px);
+    font-size: 40px;
+    margin: 0;
+    padding: 15%;
+  }
+
+  .losmasvendidos h2 span{
+    display: block;
+    padding-left: 50px;
+  }
+
+  .nuestrosclientes div{
+    overflow: hidden;
+  }
+
+  .nuestrosclientes .cliente div{
+    float: right;
+    width: 20%;
+  }
+
+  .nuestrosclientes .cliente p{
+    width: 80%;
+    float: left;
+    padding: 5%;
+  }
+
+  .nuestrosclientes div:nth-child(even) div{
+    float: left;
+    width: 20%;
+  }
+
+  .nuestrosclientes div:nth-child(even) p{
+    float: left;
+    width: 80%;
+    padding: 5%;
+  }
+
+  .nuestrosclientes div:nth-child(even) p{
+    text-align: left;
+  }
+
+  .nuestrosclientes div:last-child{
+    margin-bottom: 0;
+  }
+
+  footer{
+    overflow: hidden;
+  }
+
+  footer div{
+    width: 25%;
+    float: left;
+    border-bottom: none;
+    padding: 30px;
+    border-right: 1px solid grey;
+    min-height: 145px;
+  }
+
+
+  footer div:last-child{
+    border: none;
+  }
+
+}

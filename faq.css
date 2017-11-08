@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro|Anton');
+* {
+	box-sizing: border-box;
+	font-family: Montserrat;
+	margin: 0;
+	padding: 0;
+}
+
+
+.page-title-faq{
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 30px 0;
+  border:1px solid #e1e7ec;
+  background-color: #f5f5f5;
+}
+
+.page-title-faq h1{
+  margin: 0 auto;
+  font-size: 50px;
+  font-weight: normal;
+  text-align: center;
+  color: black;
+  font-family: Montserrat;
+  text-transform: uppercase;
+}
+
+/*h2{
+	text-align: left;
+	font-size: 40px;
+	font-family: Montserrat;
+	margin-bottom: 10px;
+}*/
+
+button.accordion {
+		background-color: white;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+		text-transform: uppercase;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color:#b6b6b6;
+		opacity: 0.6;
+}
+
+div.panel {
+		font-family: "Source Sans Pro";
+		padding-bottom: 1px;
+		padding-left: 10px;
+		background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+button.accordion:after {
+    content: '\02795'; /* Es el simbolo + */
+    font-size: 13px;
+    color: black;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796"; /* Es el simbolo - */
+}
+
+form.preguntasfrecuentesForm{
+	margin-top: 20px;
+	margin-top: 10px;
+}
+
+.subtitulo-faq{
+	width: 100%;
+	margin-bottom: 20px;
+	border: 2px solid #dadada;
+	border-radius: 4px;
+	margin-left: 8px 0;
+	outline: none;
+	padding: 8px;
+	box-sizing: border-box;
+}
+
+.submit-faq {
+	width: 50%;
+	text-align: center;
+  border: none;
+  outline: none;
+  height: 40px;
+  font-size: 16px;
+  background: #ed292a;
+  color: #fff;
+  border-radius: 20px;
+	margin-bottom: 20px;
+}
+
+
+@media (min-width: 768px) {
+
+
+
+.page-title{
+	background: url(bg2-body.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	border: 0 solid #fff;
+}
+
+.submit {
+	width: 20%;
+	text-align: center;
+  border: none;
+  outline: none;
+  height: 40px;
+  font-size: 16px;
+  background: #ed292a;
+  color: #fff;
+  border-radius: 20px;
+}
+
+}
