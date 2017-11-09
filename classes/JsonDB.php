@@ -11,7 +11,8 @@ class JsonDB{
     while ( ($linea = fgets($recurso)) !== false ) {
       $usuario = json_decode($linea, true);
 
-      if ($usuario['user'] == $user && $usuario['pass'] == password_verify($pass, $usuario['pass']) ) {
+
+      if ($usuario['user'] == $user && password_verify($pass, $usuario['pass'])) {
 
         $model = new $class([]);
         $model->toModel($usuario);
@@ -22,16 +23,15 @@ class JsonDB{
 
         return $model;
 
-
         fclose($recurso);
-        // header('location: ../index.php');exit;
+        header('location: ../index.php');exit;
 
       }
 
     }
   }
 
-  public function save($tabla, $model){
+  public function save($tabla, $model, $user){
 
     $usuario = [
 
@@ -49,7 +49,34 @@ class JsonDB{
 
     $json = json_encode($usuario);
 
-    file_put_contents("../usuarios.json", $json . PHP_EOL, FILE_APPEND);
+
+    $usuarioExiste = $this->revisarUsuario($user);
+
+    if ($usuarioExiste == true) {
+      $_SESSION['errores']['existeusuario'] = 'el usuario ya existe';
+      header('Location: ../register.php');
+    }else{
+      file_put_contents("../usuarios.json", $json . PHP_EOL, FILE_APPEND);
+      header('Location: ../login.php');
+    }
+  }
+
+
+  private function revisarUsuario($user)
+  {
+    $recurso = fopen('../usuarios.json', 'r');
+
+    while ( ($linea = fgets($recurso)) !== false ) {
+      $usuario = json_decode($linea, true);
+      if ($usuario['user'] == $user) {
+        return true;
+
+      }
+    }
+
+    fclose($recurso);
+
+
   }
 
 

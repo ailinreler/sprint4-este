@@ -36,7 +36,7 @@ class Model{
 
   public function save(){
 
-    return DBFactory::getDB()->save(static::$tabla, $this);
+    return DBFactory::getDB()->save(static::$tabla, $this, $_POST['user']);
 
   }
 
