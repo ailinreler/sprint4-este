@@ -1,15 +1,16 @@
 <?php
 
+session_start();
 
 require_once '../classes/Usuario.php';
 require_once '../classes/MySQLDB.php';
 require_once '../classes/DBFactory.php';
 require_once '../classes/JsonDB.php';
 require_once '../classes/Validacion.php';
-
+require_once 'cookie.controller.php';
 
 // MySQLDB - JsonDB
-DBFactory::$dbType = 'JsonDB';  
+DBFactory::$dbType = 'JsonDB';
 
 $usuario = new Usuario($_POST);
 

@@ -14,7 +14,7 @@ class Model{
 
   public static function login($user, $pass){
 
-    return DBFactory::getDB()::login($user, static::$tabla, get_called_class(), $pass);
+    return DBFactory::getDB()::login($user, static::$tabla ,get_called_class(), $pass);
 
   }
 

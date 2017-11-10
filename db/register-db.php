@@ -1,5 +1,5 @@
 <?php
-
+/*
 session_start();
 
 include '../controller/cookie.controller.php';
@@ -90,3 +90,4 @@ include '../conexion/conn.php';
   }else{
      header('Location: ../register.php');
   }
+*/

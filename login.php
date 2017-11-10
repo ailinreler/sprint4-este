@@ -20,7 +20,7 @@
 
     <div class="container-login">
 
-      <?php if (isset($_SESSION['errores']['errorMysql'])): ?>
+      <?php if (isset($_SESSION['errores']['datosIncorrectos'])): ?>
         <div class="errores">
           <p>alguno de los datos ingresados es incorrecto</p>
         </div>

@@ -41,10 +41,10 @@
         <img class="user" src="images/user-login.png" alt="" >
         <form class="loginbox-form" action="controller/register.controller.php" method="post" enctype="multipart/form-data">
           <div class="inputbox">
-            <input class="username"type="text" name="user" value="<?php
+            <input class="username" type="text" name="user" value="<?php
 
               if(isset($_SESSION['errores'])){
-                if (isset($_COOKIE['user']) && !isset($_SESSION['errores']['erroruser']) && !isset($_SESSION['errores']['useryaexiste'])) {
+                if (isset($_COOKIE['user']) && !isset($_SESSION['errores']['erroruser'])) {
                   echo $_COOKIE['user'];
                 }
               }

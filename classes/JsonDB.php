@@ -1,16 +1,25 @@
 <?php
 
+
 class JsonDB{
 
-  public static function login($user, $tabla, $class, $pass){
+  public static function login($user, $class, $pass){
 
     $archivo = '../usuarios.json';
 
     $recurso = fopen($archivo, 'r');
 
-    while ( ($linea = fgets($recurso)) !== false ) {
-      $usuario = json_decode($linea, true);
+    if (isset($_POST['recordar'])) {
 
+      $vencimiento = time() + 60 * 60 * 24 * 365;
+
+        setcookie('recordar', $_POST['user'], $vencimiento, '/');
+
+    }
+
+    while ( ($linea = fgets($recurso)) !== false ) {
+
+      $usuario = json_decode($linea, true);
 
       if ($usuario['user'] == $user && password_verify($pass, $usuario['pass'])) {
 
@@ -21,10 +30,16 @@ class JsonDB{
         $_SESSION['userlogged'] = $model->user;
         $_SESSION['useravatar'] = $model->avatar;
 
-        return $model;
+
 
         fclose($recurso);
+
         header('location: ../index.php');exit;
+        return $model;
+      }else{
+
+        $_SESSION['errores']['datosIncorrectos'] = 'alguno de los datos no es correcto';
+        // header('location: ../login.php');
 
       }
 
@@ -40,7 +55,7 @@ class JsonDB{
       // } por qué no funciona?------------------------------------
 
       'user' => $model->user,
-      'pass' => password_hash($model->pass, PASSWORD_DEFAULT),
+      'pass' => $model->pass,
       'mail' => $model->mail,
       'phone' => $model->phone,
       'avatar' => $model->avatar
@@ -50,27 +65,33 @@ class JsonDB{
     $json = json_encode($usuario);
 
 
-    $usuarioExiste = $this->revisarUsuario($user);
+    $usuarioOMailExiste = $this->revisarUsuario($user, $model);
 
-    if ($usuarioExiste == true) {
-      $_SESSION['errores']['existeusuario'] = 'el usuario ya existe';
+    if ($usuarioOMailExiste == 'userexiste') {
+      $_SESSION['errores']['erroruser'] = 'el usuario ya existe';
+
       header('Location: ../register.php');
-    }else{
+    }elseif( $usuarioOMailExiste == 'mailexiste' ){
+      $_SESSION['errores']['errormail'] = 'el mail ya existe';
+      header('Location: ../register.php');
+    }
+    else{
       file_put_contents("../usuarios.json", $json . PHP_EOL, FILE_APPEND);
       header('Location: ../login.php');
     }
   }
 
 
-  private function revisarUsuario($user)
+  private function revisarUsuario($user, $model)
   {
     $recurso = fopen('../usuarios.json', 'r');
 
     while ( ($linea = fgets($recurso)) !== false ) {
       $usuario = json_decode($linea, true);
       if ($usuario['user'] == $user) {
-        return true;
-
+        return 'userexiste';
+      }elseif($usuario['mail'] == $model->mail){
+        return 'mailexiste';
       }
     }
 

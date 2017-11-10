@@ -5,6 +5,14 @@ class MySQLDB{
 
   public static function login($user, $tabla, $class, $pass){
 
+    if (isset($_POST['recordar'])) {
+    
+          $vencimiento = time() + 60 * 60 * 24 * 365;
+
+          setcookie('recordar', $_POST['user'], $vencimiento, '/');
+
+        }
+
     $errores = [];
 
     $sql = DB::getConn()->prepare('SELECT * FROM ' .$tabla. ' WHERE user = :user');
@@ -12,12 +20,11 @@ class MySQLDB{
     $sql->execute();
     $resultado = $sql->fetch(PDO::FETCH_ASSOC);
 
-
     $passDB = $resultado['pass'];
 
 
-    if (password_verify($pass, $passDB)) {
 
+    if (password_verify($pass, $passDB)) {
 
 
       $model = new $class([]);
@@ -46,15 +53,25 @@ class MySQLDB{
 
   public function save($tabla, $model){
 
-    $sqlValidacion = DB::getConn()->prepare('SELECT * FROM ' .$tabla. ' WHERE user = :user');
+    $sqlValidacion = DB::getConn()->prepare('SELECT * FROM ' .$tabla. ' WHERE user = :user OR mail = :mail');
 
     $sqlValidacion->bindValue(':user', $model->user);
+    $sqlValidacion->bindValue(':mail', $model->mail);
     $sqlValidacion->execute();
 
-    $resultado = $sqlValidacion->fetch(PDO::FETCH_ASSOC);
+    $resultados = $sqlValidacion->fetchAll(PDO::FETCH_ASSOC);
 
-    if ($resultado == true) {
-      $_SESSION['errores'][errorsession] = 'el usuario ya existe';
+    if ($resultados == true) {
+      foreach ($resultados as $resultado) {
+        if ($resultado['user'] == $model->user) {
+
+            $_SESSION['errores']['erroruser'] = 'El usuario ya existe';
+        }elseif ($resultado['mail'] == $model->mail) {
+          $_SESSION['errores']['errormail'] = 'El mail ya existe';
+
+        }
+      }
+
       header('Location: ../register.php');
 
     }else{

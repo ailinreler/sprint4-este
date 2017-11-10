@@ -13,7 +13,7 @@ DBFactory::$dbType = 'JsonDB';
 
 $usuario = Usuario::login($_POST['user'], $_POST['pass']);
 
-var_dump($usuario);
+
 
 // session_start();
 //
